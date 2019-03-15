@@ -86,7 +86,7 @@ let arr = Array.prototype.slice.call('abc');
 arr.forEach(function (chr){
 
   console.log(chr);
-});*/
+});
 var obj = { p: 1 };
 obj.valueOf().toString() 
 
@@ -97,5 +97,5 @@ obj.valueOf = function(){
 };
 obj.toString = function(){
   return 2
-};
+};*/
 //Date 对象会先调用toString().

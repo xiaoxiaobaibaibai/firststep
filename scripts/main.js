@@ -170,4 +170,98 @@ if(!storedName) {
 let myButton = document.querySelector('button'); 
 myButton.onclick = setUserName;
 
+
+//3.10 留给你的时间不多了呀
+
+
+let a = 2 ** 3 ** 2;//右结合性 所以2^9
+
+'cat' > 'Cat' //c的Unicode（99）大于C（67）；
+'大' > '小'// 22823\23567
+//注意与NaN的比较。任何值（包括NaN本身）与NaN比较，返回的都是false
++0 === -0 // true
+{} === {} // false
+[] === [] // false
+(function () {} === function () {}) // false
+
+//两个复合类型（对象、数组、函数）的数据比较时，不是比较它们的值是否相等，而是比较它们是否指向同一个地址。
+undefined === undefined // true
+null === null // true
+
+let v1;
+let v2;
+v1 === v2 // true
+
+function toInt32(x){
+    return x | 0;
+}
+
+//一个小数连续进行两次二进制否运算，能达到取整效果。
+0 ^ 3 //3 异或运算
+let a = 10;
+let b = 99;
+a ^= b;
+b ^= a;
+a ^= b;
+//连续对两个数a和b进行三次异或运算，a^=b; b^=a; a^=b;，可以互换它们的值。这意味着，使用“异或运算”可以在不引入临时变量的前提下，互换两个变量的值。
+parseInt('42 cats') // 42
+Number('42 cats') // NaN
+
+let err = new Error('出错了');
+err.message//提示信息
+err.name//名称
+err.stack//堆栈r
+//自定义错误
+
+function UserError(message){
+
+  this.message = message || '默认信息';
+  this.name = 'UserError';
+
+}
+
+ throw new UserError('出错啦！');
+
+UserError.prototype = new Error();
+UserError.prototype.constructor = UserError;
+
+try {
+  
+  throw new Error('...');
+
+}catch(e){
+
+console.log(e.name + ":" + e.message);
+console.log(e.stack)
+}finally {
+
+  console.log('...');
+}
+
+try {
+   writeFile(Data);
+}catch(e) 
+{
+  handleError(e);
+}finally{
+  closeFlie();
+}
+//!大括号要另跟在关键字后面！！！js会自动添加分号
+
+控制台命令行API
+$_
 */
+/*判断变量是否为对象*/
+function isObject(value) {
+  return value === Object(value);
+}
+
+Object.getOwnPropertyNames(...).length
+var obj = {};
+obj.toString() // "[object Object]"
+
+let type = function (o){
+  let s = Object.prototype.toString.call(o);
+  return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+  
+}
